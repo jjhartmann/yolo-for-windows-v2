@@ -107,6 +107,12 @@
       <CodeGeneration>compute_30,sm_30;compute_52,sm_52</CodeGeneration>
       <TargetMachinePlatform>64</TargetMachinePlatform>
     </CudaCompile>
+    <PreBuildEvent>
+      <Command>copy /Y "D:\ThirdParty\OpenCV-2.4.13\opencv\build\x64\vc14\bin\opencv_core2413.dll" "$(SolutionDir)x64\opencv_core2413.dll"
+copy /Y "D:\ThirdParty\OpenCV-2.4.13\opencv\build\x64\vc14\bin\opencv_highgui2413.dll" "$(SolutionDir)x64\opencv_highgui2413.dll"
+copy /Y "D:\ThirdParty\OpenCV-2.4.13\opencv\build\x64\vc14\bin\opencv_ffmpeg2413_64.dll" "$(SolutionDir)x64\opencv_ffmpeg2413_64.dll"
+copy /Y "D:\ThirdParty\OpenCV-2.4.13\opencv\build\x64\vc14\bin\opencv_imgproc2413.dll" "$(SolutionDir)x64\opencv_imgproc2413.dll"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -134,7 +140,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\opencv_2.4.9\opencv\build\include;..\..\3rdparty\include;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir);$(cudnn)\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\ThirdParty\OpenCV-2.4.13\opencv\build\include;..\..\3rdparty\include;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir);$(cudnn)\include</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>OPENCV;_TIMESPEC_DEFINED;_CRT_SECURE_NO_WARNINGS;GPU;WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CLanguageStandard>c11</CLanguageStandard>
       <CppLanguageStandard>c++1y</CppLanguageStandard>
@@ -148,7 +154,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\opencv_2.4.9\opencv\build\x64\vc14\lib;C:\opencv_2.4.9\opencv\build\x64\vc12\lib;$(CUDA_PATH)lib\$(PlatformName);$(cudnn)\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\ThirdParty\OpenCV-2.4.13\opencv\build\x64\vc14\lib;$(CUDA_PATH)lib\$(PlatformName);$(cudnn)\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>..\..\3rdparty\lib\x64\pthreadVC2.lib;cublas.lib;curand.lib;cudart.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
@@ -156,6 +162,12 @@
       <TargetMachinePlatform>64</TargetMachinePlatform>
       <CodeGeneration>compute_30,sm_30;compute_52,sm_52</CodeGeneration>
     </CudaCompile>
+    <PreBuildEvent>
+      <Command>copy /Y "D:\ThirdParty\OpenCV-2.4.13\opencv\build\x64\vc14\bin\opencv_core2413.dll" "$(targetDir)opencv_core2413.dll"
+copy /Y "D:\ThirdParty\OpenCV-2.4.13\opencv\build\x64\vc14\bin\opencv_highgui2413.dll" "$(targetDir)opencv_highgui2413.dll"
+copy /Y "D:\ThirdParty\OpenCV-2.4.13\opencv\build\x64\vc14\bin\opencv_ffmpeg2413_64.dll" "$(targetDir)opencv_ffmpeg2413_64.dll"
+copy /Y "D:\ThirdParty\OpenCV-2.4.13\opencv\build\x64\vc14\bin\opencv_imgproc2413.dll" "$(targetDir)opencv_imgproc2413.dll"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <CudaCompile Include="..\..\src\activation_kernels.cu" />
