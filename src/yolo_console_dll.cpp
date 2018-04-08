@@ -11,9 +11,9 @@
 
 #ifdef OPENCV
 #include <opencv2/opencv.hpp>			// C++
-#pragma comment(lib, "opencv_core249.lib")
-#pragma comment(lib, "opencv_imgproc249.lib")
-#pragma comment(lib, "opencv_highgui249.lib")
+#pragma comment(lib, "opencv_core2413.lib")
+#pragma comment(lib, "opencv_imgproc2413.lib")
+#pragma comment(lib, "opencv_highgui2413.lib")
 void draw_boxes(cv::Mat mat_img, std::vector<bbox_t> result_vec, std::vector<std::string> obj_names, unsigned int wait_msec = 0) {
 	for (auto &i : result_vec) {
 		cv::Scalar color(60, 160, 260);
@@ -50,9 +50,9 @@ std::vector<std::string> objects_names_from_file(std::string const filename) {
 
 int main() 
 {
-	Detector detector("yolo-voc.cfg", "yolo-voc.weights");
+	Detector detector("yolo.cfg", "yolo.weights");
 
-	auto obj_names = objects_names_from_file("data/voc.names");
+	auto obj_names = objects_names_from_file("data/coco.names");
 
 	while (true) 
 	{
